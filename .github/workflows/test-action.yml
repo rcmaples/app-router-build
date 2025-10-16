@@ -1,10 +1,4 @@
 name: Test
-
-env:
-  NEXT_PUBLIC_SANITY_PROJECT_ID: 27cruzhr
-  NEXT_PUBLIC_SANITY_DATASET: production
-  SANITY_API_READ_TOKEN: ${{ secrets.SANITY_API_READ_TOKEN }}
-
 on:
   push:
     branches: [main]
@@ -13,7 +7,13 @@ on:
 
 jobs:
   build:
+    environment: 'actions'
     runs-on: ubuntu-latest
+
+    env:
+      NEXT_PUBLIC_SANITY_PROJECT_ID: 27cruzhr
+      NEXT_PUBLIC_SANITY_DATASET: production
+      SANITY_API_READ_TOKEN: ${{ secrets.SANITY_API_READ_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
