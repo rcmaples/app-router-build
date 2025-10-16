@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  push:
+    branches: [poc/sanity-cms-merge-styles]
+  pull_request:
+    branches: [poc/sanity-cms-merge-styles]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18.18.2"
+
+      - name: Install PNPM
+        run: |
+          sudo corepack enable
+          corepack prepare pnpm@9.12.3 --activate
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
