@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18.18.2"
+          node-version: "22.10.0"
 
       - name: Install PNPM
         run: |
@@ -24,6 +24,6 @@ jobs:
           corepack prepare pnpm@9.12.3 --activate
       - name: Install dependencies
         run: pnpm install
-        
+
       - name: Build
         run: pnpm run build
