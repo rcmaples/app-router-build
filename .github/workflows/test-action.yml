@@ -2,9 +2,9 @@ name: Test
 
 on:
   push:
-    branches: [poc/sanity-cms-merge-styles]
+    branches: [main]
   pull_request:
-    branches: [poc/sanity-cms-merge-styles]
+    branches: [main]
 
 jobs:
   build:
