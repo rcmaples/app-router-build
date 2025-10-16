@@ -1,5 +1,10 @@
 name: Test
 
+env:
+  NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+  NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET }}
+  SANITY_API_READ_TOKEN: ${{ vars.SANITY_API_READ_TOKEN }}
+
 on:
   push:
     branches: [main]
