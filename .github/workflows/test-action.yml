@@ -23,7 +23,7 @@ jobs:
           sudo corepack enable
           corepack prepare pnpm@9.12.3 --activate
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
+        run: pnpm install
+        
       - name: Build
         run: pnpm run build
